@@ -25,6 +25,28 @@
       <version>1.0.DEV</version>
       
     </dependency>
+
+<dependency>
+      <groupId>com.inn.myapp</groupId>
+      <artifactId>product-controllers</artifactId>
+      <version>1.0.DEV</version>
+
+    </dependency>
+
+<dependency>
+      <groupId>com.inn.myapp</groupId>
+      <artifactId>product-domain</artifactId>
+      <version>1.0.DEV</version>
+
+    </dependency>
+
+
+<dependency>
+      <groupId>com.inn.myapp</groupId>
+      <artifactId>product-service</artifactId>
+      <version>1.0.DEV</version>
+
+    </dependency>
   </dependencies>
 
 
