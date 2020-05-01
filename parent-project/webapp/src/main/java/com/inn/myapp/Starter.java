@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.WebApplicationInitializer;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.inn.myapp"})
 @ComponentScan
 public class Starter extends SpringBootServletInitializer implements WebApplicationInitializer{
 	
