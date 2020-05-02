@@ -63,7 +63,4 @@ public class AbstractEntity<P> {
 			this.isActive = isActive;
 		}
         
-        
-        
-        
 }
