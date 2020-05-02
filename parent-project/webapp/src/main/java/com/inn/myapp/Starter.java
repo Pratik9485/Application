@@ -5,12 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.WebApplicationInitializer;
 
+@EnableJpaRepositories
 @SpringBootApplication(scanBasePackages = {"com.inn.myapp"})
 @ComponentScan
 public class Starter extends SpringBootServletInitializer implements WebApplicationInitializer{
 	
+		
 	   @Override
 	    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 	        return configureApplication(builder);
