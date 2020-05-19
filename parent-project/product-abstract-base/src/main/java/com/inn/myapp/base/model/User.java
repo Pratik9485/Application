@@ -31,6 +31,16 @@ public class User extends AbstractEntity<Integer> {
 	@Column(name="middlename")
 	private String middleName;
 	
+	@Basic
+	@Column(name="age")
+	private Integer age;
+
+	
+	@Basic
+	@Column(name="email")
+	private String email;
+	
+	
 	
 	public String getUserName() {
 		return userName;
@@ -102,14 +112,6 @@ public class User extends AbstractEntity<Integer> {
 	}
 
 
-	@Basic
-	@Column(name="username")
-	private Integer age;
-
-	
-	@Basic
-	@Column(name="username")
-	private String email;
 	
 	
 }
