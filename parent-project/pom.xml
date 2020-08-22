@@ -24,7 +24,7 @@
 
 
 	<modules>
-		<module>product-abstract-base</module>
+		<module>app-base</module>
 	</modules>
 
 	<dependencies>
