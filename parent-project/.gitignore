@@ -1,0 +1,33 @@
+# compiled output
+bin/
+dist/
+target/
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+.project
+.metadata
+.settings/
+.classpath
+.sts4-cache/
+.recommenders
+
+# verions management
+.svn/
+
+# temporary file & other misc
+*~
+logs/
+*.log
+hs_err_pid*
+.attach_pid*
+.factorypath
+.fuse_hidden*
+*.lastUpdated
+_remote.repositories
+
+# UI
+modules.fileslist.json
+*.modules.fileslist.json
