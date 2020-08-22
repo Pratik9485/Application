@@ -1,4 +1,4 @@
-package com.inn.myapp.base.abstracts.entity;
+package com.inn.myapp.base.entity;
 
 
 import java.util.Date;
