@@ -43,7 +43,7 @@ public class BaseRepositoryImpl<T, I> extends SimpleJpaRepository<T, I> implemen
 	}
 
 	@Override
-	public boolean existsEntityById(I id) {
+	public boolean isEntityExistByPk(I id) {
 
 		Optional<T> findById = super.findById(id);
 		return findById.isPresent() ? Boolean.TRUE : Boolean.FALSE;

@@ -20,7 +20,8 @@ public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 	  
 	  T findEntityByPk(I id);
 	  
-	  boolean existsEntityById(I id);
+	  boolean isEntityExistByPk(I id);
+	  
 	  
 	  List<T> findAllEntity();
 	  

@@ -1,28 +1,26 @@
 package com.inn.myapp.base.abstracts.service;
 
-import java.util.Optional;
+import java.util.List;
 
-interface AbstractService<T , I> {
+/*
+ * @Author Pratik Mahajan
+*/
 
-	<S extends T> S save(S entity);
+interface AbstractService<T, I> {
 
-	<S extends T> Iterable<S> saveAll(Iterable<S> entities);
+	T createEntity(T entity);
 
-	Optional<T> findByI(I id);
+	T updateEntity(T entity);
 
-	boolean existsById(I id);
+	T findEntityByPk(I id);
 
-	Iterable<T> findAll();
+	boolean existsEntityById(I id);
 
-	Iterable<T> findAllById(Iterable<I> id);
+	List<T> findAllEntity();
 
-	long count();
+	void deleteEntityByPk(I id);
 
-	void deleteById(I id);
+	void deleteEntity(T entity);
 
-	void delete(T entity);
-
-	void deleteAll(Iterable<? extends T> entities);
-
-	void deleteAll();
+	void deleteAllEntity();
 }

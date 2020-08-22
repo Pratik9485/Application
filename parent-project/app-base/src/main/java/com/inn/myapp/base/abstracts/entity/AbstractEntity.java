@@ -9,7 +9,7 @@ import javax.persistence.MappedSuperclass;
 
 
 @MappedSuperclass
-public class AbstractEntity {
+ final class AbstractEntity {
 
 
         @Basic
