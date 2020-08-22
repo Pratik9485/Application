@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.inn.myapp.base.base.baserepository.impl.BaseRepositoryImpl;
+import com.inn.myapp.base.baserepository.impl.BaseRepositoryImpl;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"com.inn"} , repositoryBaseClass = BaseRepositoryImpl.class)

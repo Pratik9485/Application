@@ -1,4 +1,4 @@
-package com.inn.myapp.base.abstracts.service;
+package com.inn.myapp.base.service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.inn.myapp.base.base.baserepository.impl;
+package com.inn.myapp.base.baserepository.impl;
 
 import java.util.List;
 import java.util.Optional;
