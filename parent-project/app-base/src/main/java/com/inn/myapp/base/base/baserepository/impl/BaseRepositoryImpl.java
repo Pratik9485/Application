@@ -1,68 +1,74 @@
 package com.inn.myapp.base.base.baserepository.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 import com.inn.myapp.base.baserepository.BaseRepository;
 
-public class BaseRepositoryImpl<T , I> extends SimpleJpaRepository<T, I> implements BaseRepository<T, I> {
+public class BaseRepositoryImpl<T, I> extends SimpleJpaRepository<T, I> implements BaseRepository<T, I> {
 
 	
+	public final EntityManager entityManager;
 
-	@Autowired
-	public EntityManager entityManager;
-	
 	public BaseRepositoryImpl(JpaEntityInformation<T, ?> entityInformation, EntityManager entityManager) {
 		super(entityInformation, entityManager);
-	}
-	
-	@Override
-	public final <S extends T> S save(S entity) {
-		entityManager.persist(entity);
-		return null;
-	}
-
-
-	@Override
-	public final Optional<T> findById(I id) {
-		return null;
+		this.entityManager = entityManager;
 	}
 
 	@Override
-	public final boolean existsById(I id) {
-		return false;
-	}
-
-
-
-	@Override
-	public final long count() {
-		return 0;
+	public T createEntity(T entity) {
+		if(entity==null) {
+			throw new IllegalArgumentException("Entity must not be null !!!");
+		}
+		return super.save(entity);
 	}
 
 	@Override
-	public final void deleteById(I id) {
-		
+	public T updateEntity(T entity) {
+		if(entity==null) {
+			throw new IllegalArgumentException("Update Entity must not be null  !!!");
+		}
+		return super.save(entity);
 	}
 
 	@Override
-	public final void delete(T entity) {
-		
+	public T findEntityByPk(I id) {
+		Optional<T> findById = super.findById(id);
+		return findById.isPresent() ? findById.get() : null;
 	}
 
 	@Override
-	public final  void deleteAll(Iterable<? extends T> entities) {
-		
+	public boolean existsEntityById(I id) {
+
+		Optional<T> findById = super.findById(id);
+		return findById.isPresent() ? Boolean.TRUE : Boolean.FALSE;
 	}
 
 	@Override
-	public final void deleteAll() {
-		
+	public List<T> findAllEntity() {
+
+		return super.findAll();
+	}
+
+	@Override
+	public void deleteEntityByPk(I id) {
+		super.deleteById(id);
+
+	}
+
+	@Override
+	public void deleteEntity(T entity) {
+		super.delete(entity);
+	}
+
+	@Override
+	public void deleteAllEntity() {
+		super.deleteAll();
 	}
 
 }

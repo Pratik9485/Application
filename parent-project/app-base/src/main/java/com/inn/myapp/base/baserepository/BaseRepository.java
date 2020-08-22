@@ -1,6 +1,6 @@
 package com.inn.myapp.base.baserepository;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
@@ -13,21 +13,21 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 
-	<S extends T> S save(S entity);
-
-	<S extends T> Iterable<S> saveAll(Iterable<S> entities);
-
-	Optional<T> findById(I id);
-
-	boolean existsById(I id);
-
-	Iterable<T> findAll();
-
-	long count();
-
-	void deleteById(I id);
-
-	void delete(T entity);
-
-	void deleteAll();
+	
+	  T createEntity(T entity);
+	  
+	  T updateEntity(T entity);
+	  
+	  T findEntityByPk(I id);
+	  
+	  boolean existsEntityById(I id);
+	  
+	  List<T> findAllEntity();
+	  
+	  void deleteEntityByPk(I id);
+	  
+	  void deleteEntity(T entity);
+	  
+	  void deleteAllEntity();
+	 
 }
