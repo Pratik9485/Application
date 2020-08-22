@@ -13,22 +13,20 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 
-	
-	  T createEntity(T entity);
-	  
-	  T updateEntity(T entity);
-	  
-	  T findEntityByPk(I id);
-	  
-	  boolean isEntityExistByPk(I id);
-	  
-	  
-	  List<T> findAllEntity();
-	  
-	  void deleteEntityByPk(I id);
-	  
-	  void deleteEntity(T entity);
-	  
-	  void deleteAllEntity();
-	 
+	T createEntity(T entity);
+
+	T updateEntity(T entity);
+
+	T findEntityByPk(I id);
+
+	boolean isEntityExistByPk(I id);
+
+	List<T> findAllEntity();
+
+	void deleteEntityByPk(I id);
+
+	void deleteEntity(T entity);
+
+	void deleteAllEntity();
+
 }

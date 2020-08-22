@@ -1,52 +1,48 @@
 package com.inn.myapp.base.entity;
 
-
 import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-
 @MappedSuperclass
- final class AbstractEntity {
+final class AbstractEntity {
 
+	@Basic
+	@Column(name = "createdon")
+	private Date createdOn;
 
-        @Basic
-        @Column(name="createdon")
-        private Date createdOn;
+	@Basic
+	@Column(name = "lastmodifiedon")
+	private Date lastModifiedOn;
 
-        @Basic
-        @Column(name="lastmodifiedon")
-        private Date lastModifiedOn;
+	@Basic
+	@Column(name = "active")
+	private boolean isActive = true;
 
-        @Basic
-        @Column(name="active")
-        private boolean isActive=true;
+	public Date getCreatedOn() {
+		return createdOn;
+	}
 
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
 
-		public Date getCreatedOn() {
-			return createdOn;
-		}
+	public Date getLastModifiedOn() {
+		return lastModifiedOn;
+	}
 
-		public void setCreatedOn(Date createdOn) {
-			this.createdOn = createdOn;
-		}
+	public void setLastModifiedOn(Date lastModifiedOn) {
+		this.lastModifiedOn = lastModifiedOn;
+	}
 
-		public Date getLastModifiedOn() {
-			return lastModifiedOn;
-		}
+	public boolean isActive() {
+		return isActive;
+	}
 
-		public void setLastModifiedOn(Date lastModifiedOn) {
-			this.lastModifiedOn = lastModifiedOn;
-		}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
 
-		public boolean isActive() {
-			return isActive;
-		}
-
-		public void setActive(boolean isActive) {
-			this.isActive = isActive;
-		}
-        
 }

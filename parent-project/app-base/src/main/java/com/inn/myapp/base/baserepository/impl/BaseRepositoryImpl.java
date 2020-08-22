@@ -12,7 +12,6 @@ import com.inn.myapp.base.baserepository.BaseRepository;
 
 public class BaseRepositoryImpl<T, I> extends SimpleJpaRepository<T, I> implements BaseRepository<T, I> {
 
-	
 	public final EntityManager entityManager;
 
 	public BaseRepositoryImpl(JpaEntityInformation<T, ?> entityInformation, EntityManager entityManager) {
@@ -22,7 +21,7 @@ public class BaseRepositoryImpl<T, I> extends SimpleJpaRepository<T, I> implemen
 
 	@Override
 	public T createEntity(T entity) {
-		if(entity==null) {
+		if (entity == null) {
 			throw new IllegalArgumentException("Entity must not be null !!!");
 		}
 		return super.save(entity);
@@ -30,7 +29,7 @@ public class BaseRepositoryImpl<T, I> extends SimpleJpaRepository<T, I> implemen
 
 	@Override
 	public T updateEntity(T entity) {
-		if(entity==null) {
+		if (entity == null) {
 			throw new IllegalArgumentException("Update Entity must not be null  !!!");
 		}
 		return super.save(entity);
