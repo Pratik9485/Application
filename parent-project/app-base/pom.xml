@@ -9,7 +9,7 @@
 		<version>1.0.DEV</version>
 	</parent>
 	
-	<artifactId>product-abstract-base</artifactId>
+	<artifactId>app-base</artifactId>
 	<packaging>jar</packaging>
 
 	<name>product-abstract-base</name>
