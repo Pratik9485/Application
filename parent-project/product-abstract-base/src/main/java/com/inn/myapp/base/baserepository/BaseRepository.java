@@ -1,14 +1,20 @@
-package com.inn.myapp.base.abstracts.service;
+package com.inn.myapp.base.baserepository;
 
 import java.util.Optional;
 
-interface AbstractService<T , I> {
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * @Author Pratik Mahajan
+ * 
+ */
+public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 
 	<S extends T> S save(S entity);
 
 	<S extends T> Iterable<S> saveAll(Iterable<S> entities);
 
-	Optional<T> findByI(I id);
+	Optional<T> findById(I id);
 
 	boolean existsById(I id);
 
