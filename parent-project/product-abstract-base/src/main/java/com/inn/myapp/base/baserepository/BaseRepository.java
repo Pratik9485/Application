@@ -3,11 +3,14 @@ package com.inn.myapp.base.baserepository;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 
 /**
  * @Author Pratik Mahajan
  * 
  */
+
+@NoRepositoryBean
 public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 
 	<S extends T> S save(S entity);
@@ -20,15 +23,11 @@ public interface BaseRepository<T, I> extends CrudRepository<T, I> {
 
 	Iterable<T> findAll();
 
-	Iterable<T> findAllById(Iterable<I> id);
-
 	long count();
 
 	void deleteById(I id);
 
 	void delete(T entity);
-
-	void deleteAll(Iterable<? extends T> entities);
 
 	void deleteAll();
 }

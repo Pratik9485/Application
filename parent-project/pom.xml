@@ -24,9 +24,6 @@
 
 
 	<modules>
-		<module>product-service</module>
-		<module>product-controllers</module>
-		<module>product-domain</module>
 		<module>product-abstract-base</module>
 	</modules>
 
